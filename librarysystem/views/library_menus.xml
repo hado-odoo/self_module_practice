@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="libearysystem_root_menu" name="Library System" action="books_detail"/>
+
+        <menuitem id="books_view" name="Books" parent="libearysystem_root_menu" action="books_detail"/>
+        <menuitem id="student_view" name="Student" 
+            action="students_detail" 
+            parent="libearysystem_root_menu"
+            />
+
+            <menuitem id="books_tag" name="books tag" 
+            action="estate_property_manytomany" 
+            parent="books_view"/>
+
+
+        <menuitem id="book_author_view" name="book author" parent="libearysystem_root_menu" action="books_author"/>
+
+
+
+        <menuitem id="book_issue_view" name="book issue" parent="libearysystem_root_menu" action="books_issue"/>
+
+</odoo>

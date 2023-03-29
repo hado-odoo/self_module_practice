@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+librarysystem.access_books,access_books,librarysystem.model_books,base.group_user,1,1,1,1
+librarysystem.access_students,access_students,librarysystem.model_students,base.group_user,1,1,1,1
+librarysystem.access_book_tags,access_book_tags,librarysystem.model_book_tags,base.group_user,1,1,1,1
+librarysystem.access_book_author,access_book_author,librarysystem.model_book_author,base.group_user,1,1,1,1
+librarysystem.access_book_issue,access_book_issue,librarysystem.model_book_issue,base.group_user,1,1,1,1

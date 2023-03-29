@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- BOOK author VIEW -->
+    <record id="books_author" model="ir.actions.act_window">
+        <field name="name">book author</field>
+        <field name="res_model">book.author</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="estate_property_author_view_mode" model="ir.ui.view">
+        <field name="name">book author view</field>
+        <field name="model">book.author</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="author_name"/>
+                        <field name="book_name"/>
+                        <field name="publishe_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>   
+    </record>
+</odoo>

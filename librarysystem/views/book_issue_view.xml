@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- BOOK issue VIEW -->
+    <record id="books_issue" model="ir.actions.act_window">
+        <field name="name">book issue</field>
+        <field name="res_model">book.issue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="book_issue_view_mode" model="ir.ui.view">
+        <field name="name">book issue view</field>
+        <field name="model">book.issue</field>
+        <field name="arch" type="xml">
+            <form>
+            <sheet>
+                <group>
+                    <field name="sutdent_name"/>
+                    <field name="book_name"/>
+                    <field name="issue_date"/>
+                </group>
+            </sheet>
+            </form>
+        </field>   
+    </record>
+</odoo>
