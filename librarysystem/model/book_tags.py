@@ -2,7 +2,7 @@ from odoo import models,fields
 
 class Book_tags(models.Model):
     _name = "book.tags"
-    _description = "estate application"
+    _description = "librarysysteam application"
 
     name = fields.Char()
 

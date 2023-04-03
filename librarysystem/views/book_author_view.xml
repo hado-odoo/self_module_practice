@@ -22,4 +22,16 @@
             </form>
         </field>   
     </record>
+
+    <record id="estate_property_author_tree_mode" model="ir.ui.view">
+        <field name="name">book author tree view</field>
+        <field name="model">book.author</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="author_name"/>
+                <field name="book_name"/>
+                <field name="publishe_date"/>
+            </tree>
+        </field>   
+    </record>
 </odoo>

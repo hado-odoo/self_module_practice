@@ -9,10 +9,10 @@
     # data files always loaded at installation
     'data': [ 
             'security/ir.model.access.csv',
-            'views/books_view.xml',
             'views/book_tags_view.xml',
             'views/book_author_view.xml',
             'views/book_issue_view.xml',
+            'views/books_view.xml',
             'views/library_menus.xml'
     ],
     'depends':[],

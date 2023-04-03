@@ -10,10 +10,11 @@
             <form string="books">
                 <sheet>
                     <group>
-                        <field name="name"/>
+                        <!-- <field name="name"/> -->
+                        <field name="book_name"/>
                         <field name="selling_price"/>
-                        <field name="tags"/>
-                        <field name="author_name"/>
+                        <field name="tag_ids" widget="many2many_tags"/>
+                        <field name="author_ids" widget="many2many_tags"/>
                         <field name="book_stock"/>
                     </group>
                 </sheet>
@@ -23,42 +24,73 @@
 
 
     <record id="books_detail" model="ir.actions.act_window">
-        <field name="name">librarysystem_book</field>
+        <field name="name">books</field>
         <field name="res_model">books</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                    No Records Found
+                No Records Found
             </p>
         </field>
     </record>
 
-    <!-- BOOKS VIEW END -->
+
+    <record id="books_detail_tree_view" model="ir.ui.view">
+        <field name="name">librarysystem_book</field>
+        <field name="model">books</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="book_name"/>
+                <field name="selling_price"/>
+            </tree>
+        </field>
+    </record>
+
+
+<!-- BOOKS VIEW END -->
 
 
 
-    <!-- STUDENTS VIEW START -->
+<!-- STUDENTS VIEW START -->
 
-    <record id="student_detail_view" model="ir.ui.view">
-        <field name="name">Students</field>
+    <record id="student_detail_tree_view" model="ir.ui.view">
+        <field name="name">students</field>
         <field name="model">students</field>
         <field name="arch" type="xml">
-            <form string="students">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="contact_no"/>
-                        <field name="address"/>
-                        <field name="Email"/>
-                    </group>
-                    <notebook>
-                        <page string="students_book">
-                            <group>
-                                <field name = "name"/>
-                            </group>
-                        </page>
+            <tree>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+<record id="student_detail_view" model="ir.ui.view">
+    <field name="name">Students</field>
+    <field name="model">students</field>
+    <field name="arch" type="xml">
+        <form string="students">
+            <sheet>
+                <group>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="contact_no"/>
+                    <field name="address"/>
+                    <field name="email"/>
+                </group>
+                <notebook>
+                    <page string="Issued Books">
+                        <group>
+                            <field name="book_ids">
+                                <tree create="0" readonly='True' >
+                                    <field name="name"/>
+                                    <field name="issue_date"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
                 </notebook>
-                </sheet>
+            </sheet>
         </form>
     </field>
 </record>
@@ -69,12 +101,10 @@
     <field name="view_mode">tree,form</field>
     <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
-                        No Records Found
+            No Records Found
         </p>
     </field>
 </record>
 <!-- STUDENTS VIEW END -->
-
-
 
 </odoo>

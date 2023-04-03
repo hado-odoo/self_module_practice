@@ -1,20 +1,18 @@
-from odoo import models,fields
+from odoo import models,fields,api
 
 
 class Books(models.Model):
     _name = "books"
     _description = "librarysystem application"
 
-    name = fields.Char(required=True)
+    name = fields.Char()
+    book_name = fields.Many2one("book.issue")
     selling_price = fields.Float()
-    tags = fields.Many2one('book.tags',string='tags')
-    author_name = fields.Char()
+    tag_ids = fields.Many2many("book.tags")
+    author_ids = fields.Many2many("book.author")
     book_stock = fields.Integer()
 
-
     _sql_constraints = [
-        ('check_name', 'unique(name)',
+        ('check_name', 'unique(book_name)',
          'The Book name must be unique'),
     ]
-
-

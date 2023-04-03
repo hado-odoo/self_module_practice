@@ -1,23 +1,19 @@
 <?xml version="1.0"?>
 <odoo>
     <!-- BOOK TAGS VIEW -->
-    <record id="estate_property_manytomany" model="ir.actions.act_window">
+    <record id="books_tag_many2one" model="ir.actions.act_window">
         <field name="name">books tag</field>
         <field name="res_model">book.tags</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="estate_property_tag_view_mode" model="ir.ui.view">
+    <record id="books_tag_view_mode" model="ir.ui.view">
         <field name="name">book tags view</field>
         <field name="model">book.tags</field>
         <field name="arch" type="xml">
-            <form>
-            <sheet>
-                <group>
-                    <field name="name"/>
-                </group>
-            </sheet>
-            </form>
+           <tree>
+                <field name='name'/>
+           </tree>
         </field>   
     </record>
 </odoo>

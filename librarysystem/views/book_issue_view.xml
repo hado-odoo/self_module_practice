@@ -12,14 +12,28 @@
         <field name="model">book.issue</field>
         <field name="arch" type="xml">
             <form>
-            <sheet>
-                <group>
-                    <field name="sutdent_name"/>
-                    <field name="book_name"/>
-                    <field name="issue_date"/>
-                </group>
-            </sheet>
+                <sheet>
+                    <group>
+                        <!-- <field name="sutdent_name"/> -->
+                        <field name="student_id" options="{'no_create':True}"/>
+                        <field name='sutdent_name'/>
+                        <field name="issue_date"/>
+                        <field name="returned_date"/>
+                        <field name="issue_books"/>
+                    </group>
+                </sheet>
             </form>
+        </field>   
+    </record>
+
+    <record id="book_issue_tree_mode" model="ir.ui.view">
+        <field name="name">book issue tree view</field>
+        <field name="model">book.issue</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='sutdent_name'/>
+                <field name="students_id"/>
+           </tree>
         </field>   
     </record>
 </odoo>
